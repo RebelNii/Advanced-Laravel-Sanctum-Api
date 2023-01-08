@@ -1,0 +1,278 @@
+name: 'User Management'
+description: |-
+
+  APIs used to manage user resource
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/users
+    metadata:
+      groupName: 'User Management'
+      groupDescription: |-
+
+        APIs used to manage user resource
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display list of users.'
+      description: 'Get list of users.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      page_size:
+        name: page_size
+        description: 'Size per page. Default to 10.'
+        required: false
+        example: 2
+        type: integer
+        custom: []
+    cleanQueryParameters:
+      page_size: 2
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '[{"name":"Hector McGlynn","email":"sstreich@example.org"},{"name":"Tabitha Douglas","email":"otis.padberg@example.net"}]'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/user/{user_id}'
+    metadata:
+      groupName: 'User Management'
+      groupDescription: |-
+
+        APIs used to manage user resource
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display specific user.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      user_id:
+        name: user_id
+        description: 'The ID of the user.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      user:
+        name: user
+        description: 'User ID'
+        required: true
+        example: 11
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      user_id: 1
+      user: 11
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"name":"Carmel Howe","email":"yrobel@example.com"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/user
+    metadata:
+      groupName: 'User Management'
+      groupDescription: |-
+
+        APIs used to manage user resource
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create a new user.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Name of the user.'
+        required: true
+        example: 'John Doe'
+        type: string
+        custom: []
+      email:
+        name: email
+        description: 'email of the user.'
+        required: true
+        example: JohnDoe@gmail.com
+        type: string
+        custom: []
+      password:
+        name: password
+        description: 'password of the user.'
+        required: true
+        example: '-rWGo0E_EBK{w5P!!'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      name: 'John Doe'
+      email: JohnDoe@gmail.com
+      password: '-rWGo0E_EBK{w5P!!'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"name":"Candida Crona","email":"camilla32@example.net"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/user/{user_id}'
+    metadata:
+      groupName: 'User Management'
+      groupDescription: |-
+
+        APIs used to manage user resource
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update user.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      user_id:
+        name: user_id
+        description: 'The ID of the user.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      user_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Name of the user.'
+        required: false
+        example: 'John Doe'
+        type: string
+        custom: []
+      email:
+        name: email
+        description: 'Email of the user.'
+        required: false
+        example: JohnDoe@gmail.com
+        type: string
+        custom: []
+    cleanBodyParameters:
+      name: 'John Doe'
+      email: JohnDoe@gmail.com
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"name":"Marlon Nader","email":"ymedhurst@example.org"}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/user/{user_id}'
+    metadata:
+      groupName: 'User Management'
+      groupDescription: |-
+
+        APIs used to manage user resource
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete User'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      user_id:
+        name: user_id
+        description: 'The ID of the user.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      user_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "success" : "Delete"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

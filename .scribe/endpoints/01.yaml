@@ -1,0 +1,243 @@
+name: 'Post Management'
+description: |-
+
+  APIs to management Post resource
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/posts
+    metadata:
+      groupName: 'Post Management'
+      groupDescription: |-
+
+        APIs to management Post resource
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'get all post data from database'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":1,"title":"possimus","body":null,"title_upper":"POSSIMUS"},{"id":2,"title":"sed","body":null,"title_upper":"SED"},{"id":3,"title":"natus","body":null,"title_upper":"NATUS"}],"links":{"first":"http:\/\/deep-api.test\/api\/v1\/posts?page=1","last":"http:\/\/deep-api.test\/api\/v1\/posts?page=6","prev":null,"next":"http:\/\/deep-api.test\/api\/v1\/posts?page=2"},"meta":{"current_page":1,"from":1,"last_page":6,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/deep-api.test\/api\/v1\/posts?page=1","label":"1","active":true},{"url":"http:\/\/deep-api.test\/api\/v1\/posts?page=2","label":"2","active":false},{"url":"http:\/\/deep-api.test\/api\/v1\/posts?page=3","label":"3","active":false},{"url":"http:\/\/deep-api.test\/api\/v1\/posts?page=4","label":"4","active":false},{"url":"http:\/\/deep-api.test\/api\/v1\/posts?page=5","label":"5","active":false},{"url":"http:\/\/deep-api.test\/api\/v1\/posts?page=6","label":"6","active":false},{"url":"http:\/\/deep-api.test\/api\/v1\/posts?page=2","label":"Next &raquo;","active":false}],"path":"http:\/\/deep-api.test\/api\/v1\/posts","per_page":3,"to":3,"total":16}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '58'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/posts/{post_id}'
+    metadata:
+      groupName: 'Post Management'
+      groupDescription: |-
+
+        APIs to management Post resource
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      post_id:
+        name: post_id
+        description: 'The ID of the post.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      post_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"id":1,"title":"possimus","body":null,"title_upper":"POSSIMUS"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '57'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/post
+    metadata:
+      groupName: 'Post Management'
+      groupDescription: |-
+
+        APIs to management Post resource
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create new posts'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      title:
+        name: title
+        description: ''
+        required: true
+        example: placeat
+        type: string
+        custom: []
+      body:
+        name: body
+        description: ''
+        required: true
+        example: in
+        type: string
+        custom: []
+    cleanBodyParameters:
+      title: placeat
+      body: in
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/post/{post_id}'
+    metadata:
+      groupName: 'Post Management'
+      groupDescription: |-
+
+        APIs to management Post resource
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      post_id:
+        name: post_id
+        description: 'The ID of the post.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      post_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      title:
+        name: title
+        description: ''
+        required: true
+        example: quibusdam
+        type: string
+        custom: []
+      body:
+        name: body
+        description: ''
+        required: true
+        example: officia
+        type: string
+        custom: []
+    cleanBodyParameters:
+      title: quibusdam
+      body: officia
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/post/{post_id}'
+    metadata:
+      groupName: 'Post Management'
+      groupDescription: |-
+
+        APIs to management Post resource
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      post_id:
+        name: post_id
+        description: 'The ID of the post.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      post_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

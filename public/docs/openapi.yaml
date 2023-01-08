@@ -1,0 +1,729 @@
+openapi: 3.0.3
+info:
+  title: AfroTech
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://deep-api.test'
+paths:
+  /api/v1/comments:
+    get:
+      summary: 'Display a listing of the resource.'
+      operationId: displayAListingOfTheResource
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                example:
+                  -
+                    id: 1
+                    body: null
+                    user_id: 1
+                    post_id: 1
+                  -
+                    id: 2
+                    body: null
+                    user_id: 3
+                    post_id: 2
+                  -
+                    id: 4
+                    body: null
+                    user_id: 3
+                    post_id: 3
+                  -
+                    id: 5
+                    body: null
+                    user_id: 4
+                    post_id: 1
+      tags:
+        - Endpoints
+      security: []
+  /api/user:
+    get:
+      summary: ''
+      operationId: getApiUser
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/posts:
+    get:
+      summary: 'get all post data from database'
+      operationId: getAllPostDataFromDatabase
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 1
+                      title: possimus
+                      body: null
+                      title_upper: POSSIMUS
+                    -
+                      id: 2
+                      title: sed
+                      body: null
+                      title_upper: SED
+                    -
+                      id: 3
+                      title: natus
+                      body: null
+                      title_upper: NATUS
+                  links:
+                    first: 'http://deep-api.test/api/v1/posts?page=1'
+                    last: 'http://deep-api.test/api/v1/posts?page=6'
+                    prev: null
+                    next: 'http://deep-api.test/api/v1/posts?page=2'
+                  meta:
+                    current_page: 1
+                    from: 1
+                    last_page: 6
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://deep-api.test/api/v1/posts?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: 'http://deep-api.test/api/v1/posts?page=2'
+                        label: '2'
+                        active: false
+                      -
+                        url: 'http://deep-api.test/api/v1/posts?page=3'
+                        label: '3'
+                        active: false
+                      -
+                        url: 'http://deep-api.test/api/v1/posts?page=4'
+                        label: '4'
+                        active: false
+                      -
+                        url: 'http://deep-api.test/api/v1/posts?page=5'
+                        label: '5'
+                        active: false
+                      -
+                        url: 'http://deep-api.test/api/v1/posts?page=6'
+                        label: '6'
+                        active: false
+                      -
+                        url: 'http://deep-api.test/api/v1/posts?page=2'
+                        label: 'Next &raquo;'
+                        active: false
+                    path: 'http://deep-api.test/api/v1/posts'
+                    per_page: 3
+                    to: 3
+                    total: 16
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        title: possimus
+                        body: null
+                        title_upper: POSSIMUS
+                      -
+                        id: 2
+                        title: sed
+                        body: null
+                        title_upper: SED
+                      -
+                        id: 3
+                        title: natus
+                        body: null
+                        title_upper: NATUS
+                    items:
+                      type: object
+                  links:
+                    type: object
+                    properties:
+                      first:
+                        type: string
+                        example: 'http://deep-api.test/api/v1/posts?page=1'
+                      last:
+                        type: string
+                        example: 'http://deep-api.test/api/v1/posts?page=6'
+                      prev:
+                        type: string
+                        example: null
+                      next:
+                        type: string
+                        example: 'http://deep-api.test/api/v1/posts?page=2'
+                  meta:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      from:
+                        type: integer
+                        example: 1
+                      last_page:
+                        type: integer
+                        example: 6
+                      links:
+                        type: array
+                        example:
+                          -
+                            url: null
+                            label: '&laquo; Previous'
+                            active: false
+                          -
+                            url: 'http://deep-api.test/api/v1/posts?page=1'
+                            label: '1'
+                            active: true
+                          -
+                            url: 'http://deep-api.test/api/v1/posts?page=2'
+                            label: '2'
+                            active: false
+                          -
+                            url: 'http://deep-api.test/api/v1/posts?page=3'
+                            label: '3'
+                            active: false
+                          -
+                            url: 'http://deep-api.test/api/v1/posts?page=4'
+                            label: '4'
+                            active: false
+                          -
+                            url: 'http://deep-api.test/api/v1/posts?page=5'
+                            label: '5'
+                            active: false
+                          -
+                            url: 'http://deep-api.test/api/v1/posts?page=6'
+                            label: '6'
+                            active: false
+                          -
+                            url: 'http://deep-api.test/api/v1/posts?page=2'
+                            label: 'Next &raquo;'
+                            active: false
+                        items:
+                          type: object
+                      path:
+                        type: string
+                        example: 'http://deep-api.test/api/v1/posts'
+                      per_page:
+                        type: integer
+                        example: 3
+                      to:
+                        type: integer
+                        example: 3
+                      total:
+                        type: integer
+                        example: 16
+      tags:
+        - 'Post Management'
+      security: []
+  '/api/v1/posts/{post_id}':
+    get:
+      summary: ''
+      operationId: getApiV1PostsPost_id
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  id: 1
+                  title: possimus
+                  body: null
+                  title_upper: POSSIMUS
+                properties:
+                  id:
+                    type: integer
+                    example: 1
+                  title:
+                    type: string
+                    example: possimus
+                  body:
+                    type: string
+                    example: null
+                  title_upper:
+                    type: string
+                    example: POSSIMUS
+      tags:
+        - 'Post Management'
+      security: []
+    parameters:
+      -
+        in: path
+        name: post_id
+        description: 'The ID of the post.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/v1/post:
+    post:
+      summary: 'Create new posts'
+      operationId: createNewPosts
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Post Management'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: ''
+                  example: placeat
+                body:
+                  type: string
+                  description: ''
+                  example: in
+              required:
+                - title
+                - body
+      security: []
+  '/api/v1/post/{post_id}':
+    put:
+      summary: ''
+      operationId: putApiV1PostPost_id
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Post Management'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: ''
+                  example: quibusdam
+                body:
+                  type: string
+                  description: ''
+                  example: officia
+              required:
+                - title
+                - body
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiV1PostPost_id
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Post Management'
+      security: []
+    parameters:
+      -
+        in: path
+        name: post_id
+        description: 'The ID of the post.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/v1/users:
+    get:
+      summary: 'Display list of users.'
+      operationId: displayListOfUsers
+      description: 'Get list of users.'
+      parameters:
+        -
+          in: query
+          name: page_size
+          description: 'Size per page. Default to 10.'
+          example: 2
+          required: false
+          schema:
+            type: integer
+            description: 'Size per page. Default to 10.'
+            example: 2
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                example:
+                  -
+                    name: 'Hector McGlynn'
+                    email: sstreich@example.org
+                  -
+                    name: 'Tabitha Douglas'
+                    email: otis.padberg@example.net
+      tags:
+        - 'User Management'
+      security: []
+  '/api/v1/user/{user_id}':
+    get:
+      summary: 'Display specific user.'
+      operationId: displaySpecificUser
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  name: 'Carmel Howe'
+                  email: yrobel@example.com
+                properties:
+                  name:
+                    type: string
+                    example: 'Carmel Howe'
+                  email:
+                    type: string
+                    example: yrobel@example.com
+      tags:
+        - 'User Management'
+      security: []
+    put:
+      summary: 'Update user.'
+      operationId: updateUser
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  name: 'Marlon Nader'
+                  email: ymedhurst@example.org
+                properties:
+                  name:
+                    type: string
+                    example: 'Marlon Nader'
+                  email:
+                    type: string
+                    example: ymedhurst@example.org
+      tags:
+        - 'User Management'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Name of the user.'
+                  example: 'John Doe'
+                email:
+                  type: string
+                  description: 'Email of the user.'
+                  example: JohnDoe@gmail.com
+      security: []
+    delete:
+      summary: 'Delete User'
+      operationId: deleteUser
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: Delete
+                properties:
+                  success:
+                    type: string
+                    example: Delete
+      tags:
+        - 'User Management'
+      security: []
+    parameters:
+      -
+        in: path
+        name: user_id
+        description: 'The ID of the user.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+      -
+        in: path
+        name: user
+        description: 'User ID'
+        example: 11
+        required: true
+        schema:
+          type: integer
+  /api/v1/user:
+    post:
+      summary: 'Create a new user.'
+      operationId: createANewUser
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  name: 'Candida Crona'
+                  email: camilla32@example.net
+                properties:
+                  name:
+                    type: string
+                    example: 'Candida Crona'
+                  email:
+                    type: string
+                    example: camilla32@example.net
+      tags:
+        - 'User Management'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Name of the user.'
+                  example: 'John Doe'
+                email:
+                  type: string
+                  description: 'email of the user.'
+                  example: JohnDoe@gmail.com
+                password:
+                  type: string
+                  description: 'password of the user.'
+                  example: '-rWGo0E_EBK{w5P!!'
+              required:
+                - name
+                - email
+                - password
+      security: []
+tags:
+  -
+    name: Endpoints
+    description: ''
+  -
+    name: 'Post Management'
+    description: "\nAPIs to management Post resource"
+  -
+    name: 'User Management'
+    description: "\nAPIs used to manage user resource"
